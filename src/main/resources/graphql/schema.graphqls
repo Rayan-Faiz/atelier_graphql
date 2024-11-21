@@ -8,6 +8,7 @@ type Query {
     allComptes: [Compte]
     compteById(id : ID):Compte
     totalSolde: SoldeStats
+    comptesByType(type: TypeCompte): [Compte]
 }
 
 type Compte {
@@ -19,6 +20,7 @@ type Compte {
 
 type Mutation {
     saveCompte(compte:CompteRequest):Compte
+    deleteCompte(id: ID):Compte
 }
 
 input CompteRequest {
